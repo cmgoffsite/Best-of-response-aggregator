@@ -36,6 +36,7 @@ st.set_page_config(page_title="Best of Response Aggregator", page_icon="lm-circl
 
 # Streamlit GUI with processing initiation button
 def main():
+    display_logo()
     st.title("Best Of Response Aggregator")
 
     source_option = st.selectbox("Select data source", ["Upload CSV", "Google Sheets URL"])
