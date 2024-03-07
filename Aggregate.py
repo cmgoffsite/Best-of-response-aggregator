@@ -55,7 +55,7 @@ def main():
     if source_option == "Upload CSV":
         uploaded_file = st.file_uploader("Upload your CSV", type=["csv"])
         if uploaded_file is not None:
-            df = pd.read_csv(uploaded_file)
+            df = pd.read_csv(uploaded_file, dtype=str)
             process_data(df)
 
     elif source_option == "Google Sheets URL":
@@ -63,7 +63,7 @@ def main():
         if st.button("Load Sheet"):
             csv_url = convert_to_csv_url(sheet_url)
             try:
-                df = pd.read_csv(csv_url)
+                df = pd.read_csv(csv_url, dtype=str)
                 st.success("Data loaded successfully!")
                 process_data(df)
             except Exception as e:
