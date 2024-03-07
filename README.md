@@ -87,5 +87,5 @@ sets of survey data efficiently.
   free to open an issue or submit a pull request on GitHub.  
 
 ## License
-  This project is licensed under the MIT License - see the LICENSE file
+  This project is licensed under the GLP-3.0 License - see the LICENSE file
   for details.
