@@ -36,8 +36,17 @@ st.set_page_config(page_title="Best of Response Aggregator", page_icon="lm-circl
 
 # Streamlit GUI with processing initiation button
 def main():
-    display_logo()
-    st.title("Best Of Response Aggregator")
+# Custom CSS for logo and selected movie
+    st.markdown("""
+        <style>
+        .app-logo {
+            height: 100px; 
+            filter: invert(var(--logo-invert));
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    
+    display_logo()    st.title("Best Of Response Aggregator")
 
     source_option = st.selectbox("Select data source", ["Upload CSV", "Google Sheets URL"])
     df = None
