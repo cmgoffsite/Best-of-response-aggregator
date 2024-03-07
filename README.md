@@ -30,4 +30,4 @@ These dependencies are listed in the requirements.txt file for easy installation
 Contributing
 Contributions to the Best Of Response Aggregator are welcome. If you have suggestions for improvements or encounter any issues, please feel free to open an issue or submit a pull request on GitHub.
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GNU 3.0 License - see the LICENSE file for details.
