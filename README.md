@@ -56,8 +56,10 @@ sets of survey data efficiently.
   application.  
   
   ```bash
-    git clone \<repository-url\> cd \<repository-directory\> pip install
-    -r requirements.txt streamlit run Aggregate.py
+  git clone <repository-url>
+  cd <repository-directory>
+  pip install -r requirements.txt
+  streamlit run Aggregate.py
   ```
     
   Replace \<repository-url\> and \<repository-directory\> with the
