@@ -55,10 +55,10 @@ sets of survey data efficiently.
   install the required dependencies, and launch the Streamlit
   application.  
   
-'''
+```bash
   git clone \<repository-url\> cd \<repository-directory\> pip install
   -r requirements.txt streamlit run Aggregate.py
-'''
+```
     
   Replace \<repository-url\> and \<repository-directory\> with the
   actual URL of your GitHub repository and the directory name,
