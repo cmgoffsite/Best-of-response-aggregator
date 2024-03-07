@@ -34,7 +34,7 @@ sets of survey data efficiently.
   preventing automatic processing upon file upload and ensuring
   readiness.  
   
-  ## How to Use
+## How to Use
   Select Data Source: Choose between uploading a CSV file or entering a
   Google Sheets URL as the source of your survey data.  
   ** Upload CSV or Load Google Sheets**: Depending on your choice,
@@ -50,7 +50,7 @@ sets of survey data efficiently.
   cleaned data in either CSV or Excel format by clicking the
   corresponding download button.  
   
-  ## Installation
+## Installation
   To run the Best Of Response Aggregator locally, clone the repository,
   install the required dependencies, and launch the Streamlit
   application.  
@@ -66,7 +66,7 @@ sets of survey data efficiently.
   actual URL of your GitHub repository and the directory name,
   respectively.
   
-  ## Dependencies
+## Dependencies
   The app relies on several Python packages:
 
 <!-- -->
@@ -81,11 +81,11 @@ sets of survey data efficiently.
   These dependencies are listed in the requirements.txt file for easy
   installation.  
 
-  ## Contributing
+## Contributing
   Contributions to the Best Of Response Aggregator are welcome. If you
   have suggestions for improvements or encounter any issues, please feel
   free to open an issue or submit a pull request on GitHub.  
 
-  ## License
+## License
   This project is licensed under the MIT License - see the LICENSE file
   for details.
