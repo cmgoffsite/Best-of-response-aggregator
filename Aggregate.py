@@ -27,7 +27,7 @@ def display_logo():
         logo_base64 = base64.b64encode(file.read()).decode()
     
     st.markdown(
-    f"<img src='data:image/png;base64,{logo_base64}' style='height: 100px; filter: invert(var(--logo-invert));' alt='App Logo'>", 
+    f"<img src='data:image/png;base64,{logo_base64}' style='height: 100px;' alt='App Logo'>", 
     unsafe_allow_html=True
 )
 
@@ -36,7 +36,18 @@ st.set_page_config(page_title="Best of Response Aggregator", page_icon="lm-circl
 
 # Streamlit GUI with processing initiation button
 def main():
-    display_logo()    
+    # Custom CSS for logo and selected movie
+    st.markdown("""
+        <style>
+        .app-logo {
+            height: 100px; 
+            filter: invert(var(--logo-invert));
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    
+    display_logo()
+    
     st.title("Best Of Response Aggregator")
 
     source_option = st.selectbox("Select data source", ["Upload CSV", "Google Sheets URL"])
