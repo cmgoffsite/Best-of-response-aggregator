@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import base64
 from io import BytesIO
 
 def convert_to_csv_url(sheet_url):
