@@ -14,7 +14,7 @@ def convert_to_csv_url(sheet_url):
 
 def to_excel(df):
     output = BytesIO()
-    writer = pd.ExcelWriter(output, engine='xlsxwriter')
+    writer = pd.ExcelWriter(output, engine='openpyxl')
     df.to_excel(writer, index=False, sheet_name='Sheet1')
     writer.save()
     processed_data = output.getvalue()
@@ -63,19 +63,20 @@ def main():
         if st.button("Load Sheet"):
             csv_url = convert_to_csv_url(sheet_url)
             try:
-                df = pd.read_csv(csv_url, dtype=str)
+                df = pd.read_csv(csv_url)
                 st.success("Data loaded successfully!")
                 process_data(df)
             except Exception as e:
                 st.error(f"Error loading data: {e}")
 
 def process_data(df):
-    df['End Date'] = pd.to_datetime(df['End Date'])
+    df['End Date'] = pd.to_datetime(df['End Date'], errors='coerce')
     df = df.sort_values(by=['Email Address', 'End Date'])
     aggregated_df = df.groupby('Email Address', as_index=False).apply(aggregate_responses)
     final_df = aggregated_df.drop_duplicates(subset=['Email Address'], keep='last')
     final_df = final_df.sort_values(by='Email Address')
-
+    final_df = final_df.infer_objects()  # Address FutureWarning by ensuring proper dtypes
+    
     # Save the cleaned, aggregated DataFrame to a new CSV file and provide for download
     csv = final_df.to_csv(index=False).encode('utf-8')
     st.download_button(
