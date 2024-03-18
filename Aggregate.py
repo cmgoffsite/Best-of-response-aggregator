@@ -54,19 +54,21 @@ def main():
     df = None
 
     if source_option == "Upload CSV":
-        uploaded_file = st.file_uploader("Upload your CSV", type=["csv"])
-        if uploaded_file is not None:
-            df = pd.read_csv(uploaded_file)
+    uploaded_file = st.file_uploader("Upload your CSV", type=["csv"])
+    if uploaded_file is not None:
+        df = pd.read_csv(uploaded_file)
+        df['Email Address'] = df['Email Address'].str.lower()  # Convert email addresses to lowercase
 
-    elif source_option == "Google Sheets URL":
-        sheet_url = st.text_input("Enter the Google Sheets URL")
-        if st.button("Load Sheet"):
-            csv_url = convert_to_csv_url(sheet_url)
-            try:
-                df = pd.read_csv(csv_url)
-                st.success("Data loaded successfully!")
-            except Exception as e:
-                st.error(f"Error loading data: {e}")
+elif source_option == "Google Sheets URL":
+    sheet_url = st.text_input("Enter the Google Sheets URL")
+    if st.button("Load Sheet"):
+        csv_url = convert_to_csv_url(sheet_url)
+        try:
+            df = pd.read_csv(csv_url)
+            df['Email Address'] = df['Email Address'].str.lower()  # Convert email addresses to lowercase
+            st.success("Data loaded successfully!")
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
 
     if df is not None and st.button("Process Data"):
         final_df = process_data(df)
