@@ -58,6 +58,7 @@ def main():
     if uploaded_file is not None:
         df = pd.read_csv(uploaded_file)
         df['Email Address'] = df['Email Address'].str.lower()  # Convert email addresses to lowercase
+        # Further processing can go here
 
 elif source_option == "Google Sheets URL":
     sheet_url = st.text_input("Enter the Google Sheets URL")
@@ -67,6 +68,7 @@ elif source_option == "Google Sheets URL":
             df = pd.read_csv(csv_url)
             df['Email Address'] = df['Email Address'].str.lower()  # Convert email addresses to lowercase
             st.success("Data loaded successfully!")
+            # Further processing can go here
         except Exception as e:
             st.error(f"Error loading data: {e}")
 
